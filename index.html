@@ -1,0 +1,296 @@
+<html>
+	<head>
+		<title>My Favorites</title>
+		<meta name="viewport" content="width-device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		
+		<link rel="stylesheet" href="css/themes/rasmussen.css" />
+<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+		<script type = "text/javascript" src ="./scripts/addgenre.js"></script>
+		<script type = "text/javascript" src ="./scripts/addseries.js"></script>
+		<script type = "text/javascript" src ="./scripts/addauthor.js"></script> 
+		<script type = "text/javascript" src ="./scripts/addbook.js"></script> 
+	</head>
+
+	<body style="background-color:cyan;">
+		
+		
+<div data-role="page" id="LandingPage" data-transition="flip">
+
+  <div data-role="header">
+    <h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">My Favorite Books</h1>
+			</div>
+
+			<div role="main" class="ui-content">
+				<p style = "font-size:100%;">
+
+					<div data-role="content">
+						<a href="#FavGenres" class="ui-btn ui-corners-all">Favorite Genres</a>
+						<a href="#FavAuthors" class="ui-btn ui-corners-all">Favorite Authors</a>
+						<a href="#FavSeries" class="ui-btn ui-corners-all">Favorite Series</a>
+						<a href="#FavBooks" class="ui-btn ui-corners-all">Favorite Books</a>
+						<a href="#SearchBooks" class="ui-btn ui-corners-all">Search Books</a>
+						<a href="#EditList" class="ui-btn ui-corners-all">Edit List</a>
+
+					</div>
+				</p>
+
+			</div>
+
+			<div data-role="footer">
+				<p style="color:red;">
+					&copy 2017 Joshua Erickson
+				</p>
+			</div>
+		</div><!--end landing page  -->
+<div data-role="page" id="FavGenres" data-theme="a" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Favorite Genres</h1>
+	<a href="#addNewGenre" class="ui-btn-right" data-role"button">add</a>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				<ul id="genreList" data-role="listview" data-theme="c" data-filter="true">
+						
+					</ul>
+				
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+<div data-role="page" id="addNewGenre" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Add a New Genre</h1>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				<label for="txt_addGenre">Add Genre: </label>
+				<input type="text" id="txt_addGenre">
+				<a href="#FavGenres" id="btnAddGenre" data-role="button">Add Genre</a>	
+				
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+
+<div data-role="page" id="FavAuthors" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Favorite Authors</h1>
+	<a href="#addNewAuthor" class="ui-btn-right" data-role"button">add</a>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				<ul id="authorList" data-role="listview" data-theme="c" data-filter="true">
+						
+					</ul>
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+
+<div data-role="page" id="addNewAuthor" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Add a New Author</h1>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				<label for="txt_addAuthor">Add Author: </label>
+				<input type="text" id="txt_addAuthor">
+				<a href="#FavAuthors" id="btnAddAuthor" data-role="button">Add Author</a>	
+				
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+
+
+<div data-role="page" id="FavSeries" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Favorite Series</h1>
+	<a href="#addNewSeries" class="ui-btn-right" data-role"button">add</a>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				<ul id="seriesList" data-role="listview" data-theme="c" data-filter="true">
+						
+					</ul>
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+
+<div data-role="page" id="addNewSeries" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Add a New Series</h1>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				<label for="txt_addSeries">Add Series: </label>
+				<input type="text" id="txt_addSeries">
+				<a href="#FavSeries" id="btnAddSeries" data-role="button">Add Series</a>	
+				
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+
+<div data-role="page" id="FavBooks" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Favorite Books</h1>
+	<a href="#addNewBook" class="ui-btn-right" data-role"button">add</a>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+			
+			<ul id="bookList" data-role="listview" data-theme="c" data-filter="true">
+						
+					</ul>	
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+<div data-role="page" id="addNewBook" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Add a New Book</h1>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				<label for="txt_addTitle">Add Title: </label>
+				<input type="text" id="txt_addTitle">
+				<a href="#FavBooks" id="btnAddBook" data-role="button">Add Book</a>	
+				
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+
+<div data-role="page" id="SearchBooks" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Search Books</h1>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				<form action="./scripts/search.php" method="post">
+					<label for="searchTerm">Search for:</label>
+					<input type="text" name="searchTerm" id="searchTerm">			
+					<fieldset data-role="controlgroup">
+						<legend>Search By</legend>
+						<input name="searchBy" id="Genre" value="on" checked="checked" type="radio">
+						<label for="Genre">Search by Genre</label>
+						<input name="searchBy" id="Author" value="off" type="radio">
+						<label for="Author">Search by Author</label>
+					</fieldset>
+					<input type="reset" value="Reset">
+					<Input type="submit" value="Submit">
+				</form> 
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+<div data-role="page" id="EditList" data-add-back-btn="true">
+
+	<div data-role="header" data-add-back-btn="true">
+	<h1 style="font-size:250%;"><img src="./computer-dragon.jpg" alt="dragon logo" width="104" height="97">Edit List</h1>
+	</div>
+	
+	<div role="main" class="ui-content">
+		<p style="font-size:100%;">
+			<div data-role="content">
+				
+			</div>
+		</p>
+	</div>
+	
+	<div data-role="footer">
+		<p style="color:red;">
+			&copy 2017 Joshua Erickson
+		</p>
+	</div>
+</div>
+
+	</body>
+</html>
